@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+}
+
+.title{
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 30px;
+    color: aqua;
+}
+
+.galery{
+    padding-bottom: 100px;
+    padding-top:30px ;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: 200px;
+    grid-template-areas: 
+    "img1 img1 img2 img4"
+    "img1 img1 img2 img7"
+    "img6 img5 img8 img8"
+    "img3 img5 img8 img8";
+    gap: .8em;
+}
+
+.galery__picture{
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.galery__picture::before{
+    content: "beastcoast";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(4, 133, 133, 0.466);
+    transform: scale(0);
+    transition: .5s;
+    color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.galery__picture:hover::before{
+    transform: scale(1) rotate(360deg);
+}
+
+.galery__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.galery__picture--g1{
+    grid-area: img1;
+}
+.galery__picture--g2{
+    grid-area: img2;
+}
+.galery__picture--g3{
+    grid-area: img3;
+}
+.galery__picture--g4{
+    grid-area: img4;
+}
+.galery__picture--g5{
+    grid-area: img5;
+}
+.galery__picture--g6{
+    grid-area: img6;
+}
+.galery__picture--g7{
+    grid-area: img7;
+}
+.galery__picture--g8{
+    grid-area: img8;
+}
+
+@media(max-width:768px){
+
+    .title{
+        font-size: 2rem;
+        padding: .5em 0 .6em;
+    }
+
+    .galery{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:  
+        "img1 img1"
+        "img2 img2"
+        "img2 img2"
+        "img4 img3"
+        "img5 img5"
+        "img5 img5"
+        "img7 img6"
+        "img8 img8"
+        "img8 img8";
+    }
+
+    .galery__picture::before{
+        font-size: 2rem;
+    }
+}
+
